@@ -1,0 +1,555 @@
+
+<!DOCTYPE html><html lang='en' class=''>
+<head><script src='https://static.codepen.io/assets/editor/live/console_runner-1df7d3399bdc1f40995a35209755dcfd8c7547da127f6469fd81e5fba982f6af.js'></script><script src='https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" /><link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" /><link rel="canonical" href="https://codepen.io/SamKGo/pen/OboXXq" />
+<style class="cp-pen-styles">@charset "utf-8";
+
+/*Reset*/
+@import 'normalize.css';
+/* Change all elements to use border-box */
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+/*******/
+
+.background-primary {
+	background-color: #373430;
+}
+.background-secondary {
+	background-color: #FFE2B7;
+}
+.background-tertiary {
+	background-color: #fffaf2;
+}
+body {
+	font-family: "mr-eaves-sans", sans-serif;
+}
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+@media (min-width: 48em) {
+[class*='col-'] {
+	float: left;
+}
+.col-2-3 {
+	width: 66.6666%;
+}
+.col-1-3 {
+	width: 33.3333%;
+}
+.col-1-9 {
+	width: 11.1111%;
+	min-height: 1px;
+}
+}
+header {
+	color: #FFE2B7;
+	text-align: center;
+}
+header .row {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+}
+
+@media (max-width: 48em) {
+header .row {
+	flex-flow: column;
+}
+}
+header h2 {
+	font-family: "reklame-script", serif;
+	font-weight: 400;
+}
+header h1 {
+	font-size: 5em;
+	font-weight: 100;
+	line-height: 0.8em;
+	margin: 0;
+}
+header h3 {
+	font-size: 1.5em;
+	font-weight: 100;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+header img {
+	max-width: 150px;
+	padding: 15px;
+}
+header .contact {
+	width: 45%;
+	margin: 5px auto;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+}
+header ul {
+	padding-left: 0px;
+}
+header li {
+	list-style-type: none;
+	margin: 15px;
+}
+@media (max-width: 48em) {
+	header .contact {
+		flex-flow: column;
+	}
+	header li {
+		margin: 5px 0px 15px 5px;
+	}
+}
+nav {
+	background-color: #DDB97F;
+	text-align: center;
+	line-height: 1.5em;
+}
+nav ul {
+	display: flex;
+	flex-flow: row;
+	justify-content: space-around;
+	align-items: center;
+	padding-left: 0;
+}
+
+@media (max-width: 48em) {
+nav ul {
+	flex-flow: column;
+	justify-content: flex-start;
+}
+	nav ul {
+		padding: 15px 0px;
+	}
+	nav ul li {
+		text-decoration: underline;
+	}
+}
+nav ul li {
+	list-style-type: none;
+	display: inline-block;
+	color: #373430;
+	font-family: "reklame-script", serif;
+	font-size: 1.5em;
+	margin: 0px 20px;
+	padding: 5px 10px;
+	transition: all 0.3s ease 0s;
+}
+nav ul li:hover {
+	color: #FFE1B7;
+	background-color: #373430;
+	cursor: pointer;
+}
+nav a {
+	color: #373430;
+	text-decoration: none;
+}
+nav a:hover {
+	color: #FFE1B7;
+}
+section {
+	width: 80%;
+	margin: 20px auto;
+}
+section h1, section h2 {
+	font-family: "reklame-script", serif;
+	color: #373430;
+	font-weight: 400;
+	margin: 5px 10px;
+}
+section h1 {
+	border-bottom: 1px solid #835B1B;
+}
+#section2 article, #section3 article {
+	margin-top: 0;
+}
+
+@media (max-width: 48em) {
+#timeline {
+	visibility: hidden;
+	height: 1px;
+}
+}
+
+@media (min-width: 48em) {
+#section1 .row {
+	width: 90%;
+	margin: 0px auto;
+}
+#section1 h1 {
+	text-align: center;
+}
+}
+#section1 p {
+	color: #835B1B;
+	font-style: italic;
+	margin: 5px;
+}
+#section1 h3 {
+	font-size: 1.3em;
+	line-height: 1em;
+	margin: 10px 5px;
+}
+#section1 h4 {
+	color: #373430;
+	font-size: 1em;
+	font-weight: normal;
+	margin: 5px;
+}
+#section1 ul {
+	text-align: center;
+	padding-left: 0;
+}
+#section1 ul li {
+	list-style-type: none;
+	padding: 5px;
+}
+#section1 mark {
+	color: #FFE1B7;
+	background-color: #373430;
+	padding: 2px 7px;
+}
+article {
+	margin: 10px;
+	padding: 10px;
+}
+
+@media (min-width: 48em) {
+#article1, #article2 {
+	text-align: right;
+}
+#article1 {
+	margin-top: 20px;
+	min-height: 200px;
+}
+#article2 {
+	min-height: 230px;
+}
+#article3 {
+	margin-top: 110px;
+}
+#article4 {
+	min-height: 210px;
+}
+}
+#article5 p {
+	margin: 5px;
+}
+#article5 span {
+	color: #835B1B;
+	font-style: italic;
+}
+#article5 .sep {
+	font-size: 1.3em;
+	font-style: normal;
+	font-weight: 700;
+	color: #835B1B;
+}
+#article6 h2 {
+	text-align: center;
+}
+#tag-cloud {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	line-height: 1.5em;
+}
+#cloud-left {
+	width: 50%;
+	text-align: right;
+	margin-left: 20%;
+	margin-right: 5px;
+}
+#cloud-right {
+	width: 50%;
+	margin-right: 20%;
+	margin-left: 5px;
+}
+
+@media (max-width: 48em) {
+#cloud-left {
+	margin-left: 1%;
+	margin-right: 0;
+}
+#cloud-right {
+	margin-right: 1%;
+	margin-left: 0;
+}
+}
+#tag1 {
+	font-size: 2.1em;
+}
+#tag2 {
+	font-size: 1.8em;
+	font-weight: bold;
+}
+#tag3 {
+	font-size: 3em;
+	color: #835B1B;
+}
+#tag4 {
+	font-size: 1.9em;
+	font-weight: 100;
+}
+#tag5 {
+	font-size: 2.2em;
+	font-style: italic;
+}
+#tag6 {
+	font-size: 2.5em;
+	font-weight: 100;
+}
+#tag7 {
+	font-size: 3em;
+	color: #835B1B;
+}
+#tag8 {
+	font-size: 1.7em;
+	font-style: italic;
+}
+#tag9 {
+	font-size: 2.3em;
+}
+#tag10 {
+	font-size: 1.3em;
+	font-weight: 100;
+}
+#tag11 {
+	font-size: 1.7em;
+	font-weight: bold;
+}
+#article7 div {
+	display: flex;
+	flex-flow: row;
+}
+#section3 ul {
+	padding-left: 0px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+#section3 li {
+	list-style-type: none;
+	margin: 8px 10px 8px 0px;
+}
+.circles {
+	color: #835B1B;
+}
+footer {
+	color: #FFE1B7;
+	text-align: center;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	align-items: center;
+}
+@media (max-width: 48em) {
+	footer {
+		flex-flow: column;
+		justify-content: center;
+	}
+}
+footer h1 {
+	font-family: "reklame-script", serif;
+	font-weight: 400;
+	margin: 10px 0px 0px 0px;
+}
+footer h2 {
+	margin-top: 10px;
+}
+#connect {
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+}
+footer a {
+	color: #FFE1B7;
+	margin: 0px 5px;
+	transition: all 0.3s ease 0s;
+}
+footer a:hover {
+	cursor: pointer;
+	color: #DDB97F;
+}
+footer img {
+	margin-left: 10px;
+}
+footer p {
+	margin-right: 10px;
+}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SamKGo | Resume</title>
+<link rel="shortcut icon" href="../../../images/favicon_sk.ico">
+<link href="css/style_resume.css" rel="stylesheet" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<script src="https://use.typekit.net/xgu2cay.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body>
+<header class="background-primary">
+<div class="row">
+<div class="col-1-3"><img src="http://www.samkgo.com/training/edX/css-introduction/images/photo_sk.png" alt="profile image" /> </div>
+<div class="col-1-3">
+<h2>I'm the one</h2>
+<h1>Akshat Khandelwal</h1>
+<h3>Dancer | Engineer</h3>
+</div>
+<div class="col-1-3"><img src="http://www.samkgo.com/training/edX/css-introduction/images/logo_sk_header.png" alt="logo" /> </div>
+</div>
+<div class="row">
+<ul class="contact">
+<li><i class="fa fa-map-marker"></i>&nbsp; Sriganganagar,Rajasthan</li>
+<li><i class="fa fa-phone"></i>&nbsp; +919001167176</li>
+<li><i class="fa fa-envelope"></i>&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0a1abb3a8a1b4a1acb2eea1ab80a7ada1a9aceea3afad">[email&#160;protected]</a></li>
+</ul>
+</div>
+</header>
+<nav>
+<ul>
+<li><a href="#link1"><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</a></li>
+<li><a href="#link2"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Education</a></li>
+<li><a href="#link3"><i class="fa fa-certificate" aria-hidden="true"></i> Advanced Training</a></li>
+<li><a href="#link4"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Skills</a></li>
+<li><a href="#link5"><i class="fa fa-globe" aria-hidden="true"></i> Connect</a></li>
+</ul>
+</nav>
+<main>
+<section id="section1" class="background-tertiary">
+<div class="row">
+<div class="col-1-9"></div>
+<div class="col-1-3">
+<h1 id="link1"><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</h1>
+<article id="article1" class="background-secondary">
+<p class="date">August-15-Present</p>
+<h3>Choreographer | Actor</h3>
+<h4>Alvas Engineering College</h4>
+</article>
+<article id="article2" class="background-secondary">
+<p class="date">Before January 2009</p>
+<h3>Freelancer in market research and employee in gastronomy sector</h3>
+<h4>Gesellschaft für Innovative Marktforschung, Coyote Café, Hard Rock Café and others</h4>
+</article>
+</div>
+<div id="timeline" class="col-1-9">
+<h1><i class="fa fa-calendar" aria-hidden="true"></i></h1>
+<ul>
+<li>
+<mark>2016</mark>
+</li>
+<li>2015</li>
+<li>2014</li>
+<li>
+<mark>2013</mark>
+</li>
+<li>2012</li>
+<li>2011</li>
+<li>
+<mark>2010</mark>
+</li>
+<li>
+<mark>2009</mark>
+</li>
+<li>
+<mark>2008</mark>
+</li>
+<li>2007</li>
+<li>2006</li>
+<li>2005</li>
+<li>2004</li>
+<li>2003</li>
+<li>2002</li>
+<li>
+<mark>2001</mark>
+</li>
+</ul>
+</div>
+<div class="col-1-3">
+<h1 id="link2"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Education</h1>
+<article id="article3" class="background-secondary">
+<p class="date">December 2010–July 2013</p>
+<h3>Certified Graphic Designer</h3>
+<h4>Correspondence course at Fernakademie für Erwachsenenbildung, Hamburg, Germany</h4>
+</article>
+<article id="article4" class="background-secondary">
+<p class="date">October 2001–September 2008</p>
+<h3>Graduate Biologist | Dipl.-Biol.</h3>
+<h4>Studies at Heidelberg University and Goethe University Frankfurt, Germany</h4>
+</article>
+</div>
+<div class="col-1-9"></div>
+</div>
+</section>
+<section id="section2" class="background-tertiary">
+<div class="row">
+<h1 id="link3"><i class="fa fa-certificate" aria-hidden="true"></i> Advanced Training</h1>
+<article id="article5" class="background-secondary">
+<p>Selection of attendance-based and online courses (one-day to several-week)</p>
+<p><span>November–December 2016</span> | <b>Microsoft | DEV218x: Advanced CSS Concepts</b> | edX <span class="sep">//</span><span> November–December 2016</span> | <b>W3Cx | CSS.0x: CSS Introduction</b> | edX <span class="sep">//</span><span> November 2016</span> | <b>Microsoft Excel/Access</b> | GFN, Heidelberg, Germany <span class="sep">//</span><span> June–July 2016</span> | <b>W3Cx | HTML5 Part 2: Advanced Techniques for Designing HTML5 Apps</b> | edX <span class="sep">//</span><span> May–June 2016</span> | <b>W3Cx | HTML5 Part 1: HTML5 Coding Essentials and Best Practices</b> | edX <span class="sep">//</span><span> April–May 2016</span> | <b>W3Cx | HTML5.0x: HTML5 Introduction</b> | edX <span class="sep">//</span><span> April 2015</span> | <b>Publishing for Digital Media</b> | Cleverprinting, Frankfurt on the Main, Germany <span class="sep">//</span><span> October 2014</span> | <b>Office Productivity Workshop</b> | Cancom, Stuttgart, Germany <span class="sep">//</span><span> April 2013</span> | <b>Typography for Graphic and Communication Designers</b> | Wolfgang Beinert, Berlin, Germany <span class="sep">//</span><span> February 2013</span> | <b>Online Communication</b> | National Institute of Science Communication, Karlsruhe, Germany <span class="sep">//</span><span> January 2013</span> | <b>Inner Success</b> | Calvin Hollywood Photography, Oftersheim, Germany <span class="sep">//</span><span> October 2012</span> | <b>Color Management</b> | College of Higher Education, Frankfurt on the Main, Germany <span class="sep">//</span><span> October 2012</span> | <b>Acrobat – PDF as Prepress</b> | College of Higher Education, Frankfurt on the Main, Germany <span class="sep">//</span><span> August 2012</span> | <b>Website Programming with HTML</b> | College of Higher Education, Heidelberg, Germany <span class="sep">//</span><span> April–July 2012</span> | <b>Basic Principles in Biostatistics</b> | German Cancer Research Center, Heidelberg, Germany <span class="sep">//</span><span> December 2011</span> | <b>XAMPP with MySQL and PHP</b> | College of Higher Education, Heidelberg, Germany <span class="sep">//</span><span> September 2010</span> | <b>Writing Workshop for Scientists</b> | Klaus Tschira Foundation, Heidelberg, Germany <span class="sep">//</span><span> June 2010</span> | <b>Poster Design – Techniques</b> | German Cancer Research Center, Heidelberg, Germany</p>
+</article>
+</div>
+</section>
+<section id="section3" class="background-tertiary">
+<h1 id="link4"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Skills</h1>
+<div class="row">
+<div class="col-2-3">
+<article id="article6" class="background-secondary">
+<h2><i class="fa fa-bar-chart" aria-hidden="true"></i> analytical | creative <i class="fa fa-paint-brush" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;</h2>
+<div id="tag-cloud">
+<div id="cloud-left">
+<p><span id="tag1">research</span><br>
+<span id="tag2">study evaluation</span>&nbsp;&nbsp;&nbsp; <span id="tag3">scientific writing</span> <span id="tag4">statistical analysis</span>&nbsp;&nbsp;&nbsp; <span id="tag5">editing</span></p>
+</div>
+<div id="cloud-right">
+<p><span id="tag6">illustration</span>&nbsp;&nbsp;&nbsp; <br>
+<span id="tag7">print</span>&nbsp;&nbsp;&nbsp; <span id="tag8">drawing</span>&nbsp;&nbsp;&nbsp; <br>
+<span id="tag9">digital art</span>&nbsp;&nbsp;&nbsp;
+<span id="tag10">photography</span><br><span id="tag11">web design</span></p>
+</div>
+</div>
+</article>
+</div>
+<div class="col-1-3">
+<article id="article7" class="background-secondary">
+<h2><i class="fa fa-desktop" aria-hidden="true"></i> <i class="fa fa-wrench" aria-hidden="true"></i> tools</h2>
+<div id="tools">
+<ul>
+<li>InDesign</li>
+<li>Illustrator</li>
+<li>Photoshop</li>
+<li>Dreamweaver</li>
+<li>Office</li>
+</ul>
+<ul class="circles">
+<li><i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i></li>
+<li><i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i></li>
+<li><i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i></li>
+<li><i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i></li>
+<li><i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle" aria-hidden="true"></i> <i class="fa fa-circle-o" aria-hidden="true"></i></li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer class="background-primary"> <img src="http://www.samkgo.com/training/edX/css-introduction/images/logo_sk_footer.png" width="100" height="100" alt="logo" />
+<div>
+<h1 id="link5"><i class="fa fa-globe" aria-hidden="true"></i> Connect | Check me out</h1>
+<div id="connect">
+<h2><a href="https://de.linkedin.com/in/sarah-kahnert/en" title="LinkedIn" target="_blank"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></h2>
+<h2><a href="https://www.behance.net/samgokahnert" title="Behance" target="_blank"><i class="fa fa-behance-square fa-2x" aria-hidden="true"></i></a></h2>
+<h2><a href="https://twitter.com/SamKGo" title="Twitter" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></h2>
+<h2><a href="https://www.instagram.com/samkgo/" title="Instagram" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></h2>
+</div>
+</div>
+<p id="copyright">© SamKGo</p>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
+</body></html>
